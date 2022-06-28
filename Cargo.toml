@@ -5,6 +5,7 @@ authors = ["erdnaxe", "yhql"]
 edition = "2021"
 description = "Rust no_std test harness"
 repository = "https://github.com/aiooss-ledger/embedded_test_harness/"
+license = "MIT"
 
 [dependencies]
 panic-semihosting = "0.6.0"
