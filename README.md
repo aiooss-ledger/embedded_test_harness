@@ -43,3 +43,8 @@ pub fn _start() -> ! {
     loop {}
 }
 ```
+
+## References
+
+  * [Writing an OS in Rust, Philipp Oppermann](https://os.phil-opp.com/testing/)
+  * [Integrated Testing, Operating System development tutorials in Rust on the Raspberry Pi](https://github.com/rust-embedded/rust-raspberrypi-OS-tutorials/tree/master/12_integrated_testing)
