@@ -1,6 +1,6 @@
 [package]
 name = "embedded_test_harness"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["erdnaxe", "yhql"]
 edition = "2021"
 description = "Rust no_std test harness"
