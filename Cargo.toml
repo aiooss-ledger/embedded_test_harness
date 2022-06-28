@@ -1,0 +1,8 @@
+[package]
+name = "embedded_test_harness"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+panic-semihosting = "0.6.0"
+cortex-m-semihosting = "0.3.7"
