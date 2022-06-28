@@ -12,13 +12,15 @@ Then you may write tests following this template:
 
 ```Rust
 #![no_std]
-#![no_main]
+#![cfg_attr(test, no_main)]
 #![reexport_test_harness_main = "test_main"]
 #![feature(custom_test_frameworks)]
 #![test_runner(test_runner)]
 
 use panic_semihosting as _;
-use embedded_test_harness::{test_runner, TestType};
+
+#[cfg(test)]
+use embedded_test_harness::test_runner;
 
 #[cfg(test)]
 mod tests {
