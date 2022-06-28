@@ -2,7 +2,6 @@
 
 use core::fmt;
 
-#[inline(never)]
 pub fn _print(args: fmt::Arguments) {
     use core::fmt::Write;
     use cortex_m_semihosting::hio::hstdout;
@@ -47,4 +46,21 @@ pub fn test_runner(tests: &[&TestType]) {
         println!("{}::{}", t.modname, t.name);
     }
     exit(return_code);
+}
+
+/// `assert_eq` panics when operands differ, which is problematic in an
+/// embedded setup. This is a variant of `assert_eq` which returns an error
+/// on a failed equality assertion.
+#[macro_export]
+macro_rules! assert_eq_err {
+    ($left:expr, $right:expr) => {{
+        match (&$left, &$right) {
+            (left_val, right_val) => {
+                if !(*left_val == *right_val) {
+                    $crate::println!("assertion failed: left != right");
+                    return Err(());
+                }
+            }
+        }
+    }};
 }
