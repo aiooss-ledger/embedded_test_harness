@@ -17,6 +17,7 @@ Then you may write tests following this template:
 #![feature(custom_test_frameworks)]
 #![test_runner(test_runner)]
 
+use panic_semihosting as _;
 use embedded_test_harness::{test_runner, TestType};
 
 #[cfg(test)]

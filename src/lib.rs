@@ -1,7 +1,6 @@
 #![no_std]
 
 use core::fmt;
-use panic_semihosting as _;
 
 #[inline(never)]
 pub fn _print(args: fmt::Arguments) {
